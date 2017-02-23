@@ -13,6 +13,10 @@ class Customer
   attr_reader :id
 
   def reviews
+    sql = <<-SQL
+    SELECT reviews. * FROM reviews
+    
+    SQL
   end
 
   def restaurants
@@ -23,6 +27,8 @@ class Customer
     SQL
     self.class.db.execute(sql, self.id)
   end
+
+
 end
 
 

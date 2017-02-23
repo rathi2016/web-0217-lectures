@@ -3,6 +3,15 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+
+  get'/user/new' do
+  erb :new
+  end
+
+  get'user/:id/edit' do
+    erb :edit
+  end
+
   # /users/new
 
   # create
